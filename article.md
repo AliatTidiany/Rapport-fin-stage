@@ -1,7 +1,12 @@
 ---
 title: |
   ![](./img/Logo.png){width=6in}  
+  "RAPPORT DE FIN DE STAGE: GESTION AUTOMATISÉE DES POINTS DE BRANCHEMENT OPTIQUE"
+
 subtitle: "Année académique 2021-2022"
+author:
+- name: Alioune MBODJI
+tags: [Année académique 2021-2022]
 lang: fr-FR
 urlcolor: blue
 geometry: "left=2.5cm,right=2.5cm,top=3cm,bottom=3cm"
@@ -27,6 +32,16 @@ effectué par ***Alioune MBODJI***
 
 
 **Entreprise d’accueil**: FREE
+
+
+
+
+
+
+
+
+
+
 
 ### REMERCIEMENTS
 
@@ -55,6 +70,8 @@ Un grand merci à ma mère, ma famille et mes camarades de classe pour leurs con
 * 13. Les apports du stage	
 * 14. Conclusion	
 * 15. Bibliographie	
+
+
 
  
 1.  INTRODUCTION
