@@ -3,10 +3,7 @@ title: |
   ![](./img/Logo.png){width=6in}  
   "RAPPORT DE FIN DE STAGE: GESTION AUTOMATISÉE DES POINTS DE BRANCHEMENT OPTIQUE"
 
-subtitle: "Année académique 2021-2022"
-author:
-- name: Alioune MBODJI
-tags: [Année académique 2021-2022]
+subtitle: ANNÉE ACADÉMIQUE 2021-2022
 lang: fr-FR
 urlcolor: blue
 geometry: "left=2.5cm,right=2.5cm,top=3cm,bottom=3cm"
@@ -17,7 +14,8 @@ documentclass: article
 
 
 
-# Gestion automatisée des points de branchemnt optique (PBO)
+# GESTION AUTOMATISÉE DES POINTS DE BRANCHEMENT OPTIQUE (PBO)
+### ANNÉE ACADÉMIQUE 2021-2022
 
 effectué par ***Alioune MBODJI***
 
@@ -32,6 +30,25 @@ effectué par ***Alioune MBODJI***
 
 
 **Entreprise d’accueil**: FREE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -150,14 +167,12 @@ Au cours de ce stage, j’ai pu bénéficier d’une bonne documentation sur la 
   ***Présentation des outils :***
 
   **SQlite :**
-
   SQLite est un système de base de données qui a la particularité de fonctionner sans serveur, on dit aussi "standalone" ou "base de données embarquée".
   L'intérêt c'est que c'est très léger et rapide à mettre en place, on peut s'en servir aussi bien pour stocker des données dans une vraie base de données ou sur une application.
   Une base de données SQLite est bien plus performante et facile à utiliser que de stocker les données dans des fichiers XML ou binaires, d'ailleurs ces performances sont même comparables aux autres SGBD fonctionnant avec un serveur comme MySQL, Microsoft SQL Server ou PostgreSQL.
   L'autre avantage est la simplicité : il n'y a aucune manipulation à faire, le fichier sqlite est créé automatiquement à la volée, toute la base est stockée dans un fichier unique qu'il est facile d'échanger en FTP.
 
   **Flask :**
-
   Flask est un petit framework web Python léger, qui fournit des outils et des fonctionnalités utiles qui facilitent la création d'applications web en Python. Il offre aux développeurs une certaine flexibilité et constitue un cadre plus accessible pour les nouveaux développeurs, puisque vous pouvez construire rapidement une application web en utilisant un seul fichier Python. (technologie non utilisée sur ce projet.)
 
   **Python :**
@@ -165,6 +180,14 @@ Au cours de ce stage, j’ai pu bénéficier d’une bonne documentation sur la 
   En effet, Python est un langage qui prend en charge la gestion et la manipulation de données volumineuses et certaines de ses fonctions gèrent le traitement d’informations multiples de manière automatisée ainsi que la collecte et le nettoyage de données. Il permet notamment la modélisation de ces données et est très utilisé en Data Visualization. 
 
   Python est majoritairement utilisé dans l’écriture de scripts qui permettent l’automatisation de systèmes de fichiers. Cependant, c’est loin d’être les seules utilités de ce langage. D'ailleurs nous allons nous servir d'un script qui nous permettra de formater notre "input: saisie de donnée " et de le stocker au niveau de la base SQlite.
+
+  **Pandas :**
+  La bibliothèque logicielle open-source Pandas est spécifiquement conçue pour la manipulation et l’analyse de données en langage Python. Elle est à la fois performante, flexible et simple d’utilisation.
+  Grâce à Pandas, le langage Python permet enfin de charger, d’aligner, de manipuler ou encore de fusionner des données. Les performances sont particulièrement impressionnantes quand le code source back-end est écrit en C ou en Python.
+  Le nom  » Pandas  » est en fait la contraction du terme  » Panel Data « , désignant les ensembles de données incluant des observations sur de multiples périodes temporelles. Cette bibliothèque a été créée comme un outil de haut niveau pour l’analyse en Python.
+
+
+  
 
 
   11. Les Missions :
@@ -201,7 +224,18 @@ Au cours de ce projet, différentes sortes de tâches seront realisées :
   - Voir code ci-dessous:
   
 ```python
-print("toto")
+def parse(zstring):
+    zones = zstring.split("#end")
+    all_lines = []
+    for zone_element in zones:
+        pieces = zone_element.strip().splitlines()
+        zone = pieces.pop(0)
+        list_infos = pieces
+        for info in list_infos:
+            modified_info = zone + ", " + info + ", " + str(datetime.datetime.now())
+            all_lines.append(modified_info.split(","))
+
+    return all_lines
 ```
 
 **Stockage des données au niveau de SQlite :**
@@ -214,6 +248,31 @@ Comme varibales au niveau de la base on aura: nom_plaque, numéro_PBO, numéro_f
 
 ![](./img/Base_sqlite.png){width=6in}
 
+- Code python:
+
+```python
+def create_table(cur, name):
+    sql_create_table = """ CREATE TABLE IF NOT EXISTS {} (
+                                nom_plaque text , 
+                                numero_PBO integer ,
+                                numero_fibre text,
+                                type_PBO text,
+                                central_optique text,
+                                port_ODF text,
+                                mesure_optique text,
+                                statut text,
+                                commentaire text,
+                                date text
+                                    ); """.format(name)
+    cur.execute(sql_create_table) 
+
+def push_data(cur, name, path):
+    with open(path) as file:
+        lignes = parse(file.read())
+    cur.executemany('insert into {} values (?,?,?,?,?,?,?,?,?,?)'.format(name), lignes)
+```
+
+
 
 **Envoie courriel automatique :**
 
@@ -222,7 +281,31 @@ Aprés traitement et stockage des données au niveau de la base, la dernière é
 Voir le code ci-dessous: 
 
 ```python
-print("toto")
+def send_mail(sujet, sender, mdp, receiver, contenu, piece_jointe):
+    msg = MIMEMultipart()
+    msg["Subject"] = sujet
+    msg["From"] = sender
+    msg["To"] = receiver 
+    msg.attach(MIMEText(contenu))
+
+    path = piece_jointe
+    with open(path, "rb") as fil:
+        part = MIMEApplication(
+            fil.read(),
+            Name = basename(path)
+        )
+        part['Content-Disposition'] = 'attachment; filename="%s"' % basename(path)
+        msg.attach(part)
+
+    ctx = ssl.create_default_context()
+    password = mdp     # Your app password goes here
+    #sender = "jibynd@gmail.com"    # Your e-mail address
+    #receiver = "djibril@sendwave.com" # Recipient's address
+   
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", port=465, context=ctx) as server:
+        server.login(sender, password)
+        server.send_message(msg)
 ```
 
 
