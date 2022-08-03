@@ -1,6 +1,6 @@
 ---
 title: |
-  ![](./img/Logo.png){width=12in}  
+  ![](./img/Logo.png){width=8in}  
   "RAPPORT DE FIN STAGE"
 subtitle: "Année académique 2021-2022"
 date: \today{}
