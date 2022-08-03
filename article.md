@@ -1,33 +1,28 @@
 ---
-![](./img/Logo.png){width=2in}
-title:
-- ${1: RAPPORT DE STAGE: GESTION AUTOMATISÉE DES POINTS DE BRANCHEMENT}
-author:
-- ${2: ALIOUNE MBODJI}
-papersize:
-- a4
-fontsize:
-- 12pt
-geometry:
-- margin=1in
-fontfamily:
-- charter
-header-includes:
-- \setlength\parindent{24pt}
+title: |
+  ![](./img/Logo.png){width=12in}  
+  "RAPPORT DE FIN STAGE"
+subtitle: "Année académique 2021-2022"
+date: \today{}
+lang: fr-FR
+urlcolor: blue
+geometry: "left=2.5cm,right=2.5cm,top=3cm,bottom=3cm"
+documentclass: article
 ---
 
 
 
-# Rapport de stage: 
 
-## Gestion automatisée des points de branchemnt optique (PBO)
+
+# Gestion automatisée des points de branchemnt optique (PBO)
+
 effectué par ***Alioune MBODJI***
 
 
-**Tuteur de stage** : Patrick NSUKAMI
+**Tuteur de stage** : ***Patrick NSUKAMI***
 
 
-**Superviseur académique** : Robert THIAW
+**Superviseur académique** : ***Robert THIAW***
 
 
 **Établissement**: Dakar Institut of Technology DIT
@@ -49,14 +44,14 @@ Un grand merci à ma mère, ma famille et mes camarades de classe pour leurs con
 
 * 1. Introduction	
 * 2. L’environnement de travail	
-* 3. Le secteur :	
-* 4. Présentation :	
-* 5. Le cadre du stage :	
+* 3. Le secteur 
+* 4. Présentation 
+* 5. Le cadre du stage 	
 * 6. Description de la structure sociale	
 * 7. Fonctionnement	
-* 8. Les travaux effectués et les apports du stage	
+* 8. Mise en place de l'application
 * 9. Les travaux effectués	
-* 10. Les outils mis à ma disposition	
+* 10. Les outils et technologies utilisées
 * 11. Les Missions du poste occupé	
 * 12. Les tâches périphériques	
 * 13. Les apports du stage	
@@ -64,7 +59,7 @@ Un grand merci à ma mère, ma famille et mes camarades de classe pour leurs con
 * 15. Bibliographie	
 
  
-1. #### INTRODUCTION
+1.  INTRODUCTION
 
 Amorce et présentation du stage
 Du 31 Juillet 2022 au 04 Août 2022 (1 mois), j’ai effectué un stage au sein du Dakar Institut of Technology(DIT) (située à la cité Keur Guorgui). 
@@ -99,7 +94,7 @@ En vue de rendre compte de manière fidèle et analytique de la période passée
 
 2. L’environnement de travail
   3. Le secteur : Les télécommunications
-    4. **Présentation de FREE :**
+  4. Présentation de FREE :
 
 Free au Sénégal est un opérateur global de Téléphonie mobile au Sénégal. Il compte aujourd’hui plus de 4 millions de clients qui utilisent tous les jours ses services mobiles, internet et financiers. 
 En avril 2018, Tigo Sénégal devenu free est cédé à Saga Africa Holdings Limited, un consortium Sénégalo-Franco-Malgache.
@@ -111,31 +106,34 @@ Il s’agit d’une technologie innovante qui permet le transfert de données su
 
 
 5. Le cadre du stage :
-  6. **Description de la structure sociale de DIT :**
+  6. Description de la structure sociale de DIT :
+
 L’école DIT regroupe un effectif de 12 employés, qui sont divisés départements, tous sous la direction du directeur général.
 -         Directeur général
 -         Directeur des études 
 -         Responsable 
 -         
 -         
-  7. **Fonctionnement :**
+  7. Fonctionnement :
+
 Au sein de cette société, il est aisé de percevoir l’interaction constante entre les différents départements décrits plus haut.
 Compte tenu du fait que mon stage a été exclusivement réalisé dans le cadre de mon travail professionnel, je vais plus m’atteler aux aspects techniques (mise en place du projet ainsi qu’aux travaux effectués)
 
 
 
-  8. Les travaux effectués et les apports du stage
-  ##### 9. Les travaux effectués 
+  8. Mise en place de l'application :
+  9. Les travaux effectués :
 
 Au cours de ce stage, j’ai eu l’opportunité de découvrir la multitude de solutions que pourrait m’offrir l’IA appliqué aux télécommunications. Pour une meilleure compréhension des tâches que j’ai pu effectuer, il apparaît approprié de traiter en premier lieu des outils qui étaient mis à ma disposition, puis de traiter de manière détaillée les tâches que j’ai pu effectuer.
 
-  ##### 10. **Les outils et technologies utilisés :**
+  10. Les outils et technologies utilisés :
 
 Au cours de ce stage, j’ai pu bénéficier d’une bonne documentation sur la mise en place d’une base de données SQLite, les fondamentaux du language Python ainsi que sur la façon de réaliser une application web avec Flask sur Python. 
 
  De plus des données que m’ont fourni FREE dans le cadre du déploiement du réseau optique. 
 
   ***Présentation des outils :***
+
   **SQlite :**
 
   SQLite est un système de base de données qui a la particularité de fonctionner sans serveur, on dit aussi "standalone" ou "base de données embarquée".
@@ -154,7 +152,8 @@ Au cours de ce stage, j’ai pu bénéficier d’une bonne documentation sur la 
   Python est majoritairement utilisé dans l’écriture de scripts qui permettent l’automatisation de systèmes de fichiers. Cependant, c’est loin d’être les seules utilités de ce langage. D'ailleurs nous allons nous servir d'un script qui nous permettra de formater notre "input: saisie de donnée " et de le stocker au niveau de la base SQlite.
 
 
-  ##### 11. **Les Missions :**
+  11. Les Missions :
+
   ***Présentation :***
 
 Comme il a été précisé en introduction, ma mission principale est de superviser le déploiement du réseau optique de l’opérateur FREE de bout en bout. Ainsi dans cette optique, j’ai pu constater qu’il était nécessaire d’automatiser certaines tâches fastidieuses. Notamment la phase de recette qui se déroule à la fin de chaque semaine. 
@@ -169,7 +168,8 @@ Au cours de ce projet, différentes sortes de tâches seront realisées :
 -         Stocker les données au niveau de la base SQlite.
 -         Envoyer un courriel récapitulatif sur l’état d’avancement des travaux: le nombre de PBO raccordés.
 
-12. **Les tâches périphériques :** 
+12. Les tâches périphériques :
+
   **Définir un format d'input :**
 
   Dans cette partie, nous allons définir un format de données (.txt) bien spécifique afin de pouvoir écrire un script python qui va les classifier selon un type et les stocker dans la base SQlite.
@@ -232,7 +232,7 @@ Mon stage chez DIT a été très instructif. Au cours de cette période j’ai a
 
 
 
-14. #### Conclusion 
+14. Conclusion 
 
   **Résumé global :** 
 
@@ -250,7 +250,7 @@ Cette expérience m’a permis de répondre aux questionnements que j’avais en
 
 A la fin de mon stage, l’objectif serait la mise en place de l’interface web (avec Flask) et de rajouter des fonctionnalités à savoir la partie exploitation de la fibre optique : gestion des abonnés en plus de la partie déploiement.
 
-15. #### Bibliographie
+15. Bibliographie
 
 1.	https://nskm.xyz/documents/sql-introduction.pdf
 2.	https://python.developpez.com/tutoriel/intro-flask-python3/#LVI
