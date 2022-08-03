@@ -1,7 +1,6 @@
 ---
 title: |
-  ![](./img/Logo.png){width=6in}  
-  "RAPPORT DE FIN DE STAGE: GESTION AUTOMATISÉE DES POINTS DE BRANCHEMENT OPTIQUE"
+  ![](./img/Logo.png){width=7in} 
 
 subtitle: ANNÉE ACADÉMIQUE 2021-2022
 lang: fr-FR
@@ -15,52 +14,12 @@ documentclass: article
 
 
 # GESTION AUTOMATISÉE DES POINTS DE BRANCHEMENT OPTIQUE (PBO)
-### ANNÉE ACADÉMIQUE 2021-2022
-
-effectué par ***Alioune MBODJI***
-
-
-**Tuteur de stage** : ***Patrick NSUKAMI***
-
-
-**Superviseur académique** : ***Robert THIAW***
-
-
-**Établissement**: Dakar Institut of Technology DIT
-
-
-**Entreprise d’accueil**: FREE
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### REMERCIEMENTS
+## REMERCIEMENTS
 
 En premier lieu, je tiens à remercier M. Patrick , mon professeur en python. En tant que maître de stage, il m’a beaucoup appris et assisté par rapport à la réalisation de ce projet ainsi qu'à mon tuteur Djibril NDIAYE. 
 
@@ -68,7 +27,7 @@ Je saisi cette occasion pour adresser mes profonds remerciements aux responsable
 Un grand merci à ma mère, ma famille et mes camarades de classe pour leurs conseils ainsi que leur soutien.
 
 
-#### SOMMAIRE
+### SOMMAIRE
 
 
 
