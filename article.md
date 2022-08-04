@@ -36,12 +36,12 @@ Un grand merci à ma mère, ma famille et mes camarades de classe pour leurs con
 * 3. Le secteur 
 * 4. Présentation 
 * 5. Le cadre du stage 	
-* 6. Description de la structure sociale	
+* 6. Organigramme et structure sociale	
 * 7. Fonctionnement	
-* 8. Mise en place de l'application
+* 8. Mise en place du système automatisé de gestion des boîtiers optiques
 * 9. Les travaux effectués	
 * 10. Les outils et technologies utilisées
-* 11. Les Missions du poste occupé	
+* 11. Les Missions 	
 * 12. Les tâches périphériques	
 * 13. Les apports du stage	
 * 14. Conclusion	
@@ -97,14 +97,26 @@ Il s’agit d’une technologie innovante qui permet le transfert de données su
 
 
 5. Le cadre du stage :
-  6. Description de la structure sociale de DIT :
+  6. Organigramme et structure sociale de DIT :
 
-L’école DIT regroupe un effectif de 12 employés, qui sont divisés départements, tous sous la direction du directeur général.
+L’école DIT regroupe un effectif de 08 employés, regroupés en différents services. 
+Le conseil de gestion est présenté comme suit:
+
+
 -         Directeur général
 -         Directeur des études 
--         Responsable 
--         
--         
+-         Cellule interne d'assurance qualité
+-         Service pédagogique cours du jour
+-         Service pédagogique cours du soir
+-         Service acceuil et scolarité
+-         Service administratif et financier 
+-         Service des alumnis et de l'insertion
+-         Service commercial et partenariat
+-         Service marketing
+-         Service hygiéne et sécurité
+-         Bureau des éléves et activités culturelles
+
+
   7. Fonctionnement :
 
 Au sein de cette société, il est aisé de percevoir l’interaction constante entre les différents départements décrits plus haut.
@@ -112,7 +124,7 @@ Compte tenu du fait que mon stage a été exclusivement réalisé dans le cadre 
 
 
 
-  8. Mise en place de l'application :
+  8. Mise en place du système automatisé de gestion des boîtiers optiques :
   9. Les travaux effectués :
 
 Au cours de ce stage, j’ai eu l’opportunité de découvrir la multitude de solutions que pourrait m’offrir l’IA appliqué aux télécommunications. Pour une meilleure compréhension des tâches que j’ai pu effectuer, il apparaît approprié de traiter en premier lieu des outils qui étaient mis à ma disposition, puis de traiter de manière détaillée les tâches que j’ai pu effectuer.
@@ -121,7 +133,7 @@ Au cours de ce stage, j’ai eu l’opportunité de découvrir la multitude de s
 
 Au cours de ce stage, j’ai pu bénéficier d’une bonne documentation sur la mise en place d’une base de données SQLite, les fondamentaux du language Python ainsi que sur la façon de réaliser une application web avec Flask sur Python. 
 
- De plus des données que m’ont fourni FREE dans le cadre du déploiement du réseau optique. 
+De plus des données que m’ont fourni FREE dans le cadre du déploiement du réseau optique. 
 
   ***Présentation des outils :***
 
@@ -144,6 +156,11 @@ Au cours de ce stage, j’ai pu bénéficier d’une bonne documentation sur la 
   La bibliothèque logicielle open-source Pandas est spécifiquement conçue pour la manipulation et l’analyse de données en langage Python. Elle est à la fois performante, flexible et simple d’utilisation.
   Grâce à Pandas, le langage Python permet enfin de charger, d’aligner, de manipuler ou encore de fusionner des données. Les performances sont particulièrement impressionnantes quand le code source back-end est écrit en C ou en Python.
   Le nom  » Pandas  » est en fait la contraction du terme  » Panel Data « , désignant les ensembles de données incluant des observations sur de multiples périodes temporelles. Cette bibliothèque a été créée comme un outil de haut niveau pour l’analyse en Python.
+
+  **Conda :**
+  Conda est un système de gestion de paquets et d’environnement open-source qui fonctionne sous Windows, macOS et Linux. Conda installe, exécute et met à jour rapidement les paquets et leurs dépendances. Conda crée, enregistre, charge et bascule facilement entre les environnements sur votre ordinateur local.
+
+  Il a été créé pour les programmes Python, mais il peut empaqueter et distribuer des logiciels pour n’importe quel langage.
 
 
   
@@ -175,7 +192,7 @@ Au cours de ce projet, différentes sortes de tâches seront realisées :
     - Les éléments spécifiques à chaque plaque: numéro PBO, numéro fibre, la nature de l'infrastructure (type PBO), le central sur lequel le boîtier est raccordé, le port auquel le PBO est branché (côté central), la mesure prise sur une fibre du boitier, le statut (rejeté ou non) et la partie commentaire.  
   - Illustration: 
 
-  ![](./img/Format_input.png){width=6in}
+  ![](./img/Format_test.png){width=6in}
 
   **Script Python :**
 
@@ -199,7 +216,7 @@ def parse(zstring):
 
 **Stockage des données au niveau de SQlite :**
 
-On va créer une table nommée "déploiement_FTTH" ou on va sauvegarder les données téléverser par notre script python. 
+On va créer une table nommée "base.db" ou on va sauvegarder les données téléverser par notre script python. 
 
 Comme varibales au niveau de la base on aura: nom_plaque, numéro_PBO, numéro_fibre, type_PBO, central_optique, port_ODF, mesure_optique, statut et commentaire.
 
@@ -241,31 +258,45 @@ Voir le code ci-dessous:
 
 ```python
 def send_mail(sujet, sender, mdp, receiver, contenu, piece_jointe):
-    msg = MIMEMultipart()
-    msg["Subject"] = sujet
-    msg["From"] = sender
-    msg["To"] = receiver 
-    msg.attach(MIMEText(contenu))
+  msg = MIMEMultipart()
+  msg["Subject"] = sujet
+  msg["From"] = sender
+  msg["To"] = receiver 
+  msg.attach(MIMEText(contenu))
 
-    path = piece_jointe
-    with open(path, "rb") as fil:
-        part = MIMEApplication(
-            fil.read(),
-            Name = basename(path)
-        )
-        part['Content-Disposition'] = 'attachment; filename="%s"' % basename(path)
-        msg.attach(part)
+  path = piece_jointe
+  with open(path, "rb") as fil:
+    part = MIMEApplication(
+      fil.read(),
+      Name = basename(path)
+    )
+    part['Content-Disposition'] = 'attachment; filename="%s"' % basename(path)
+    msg.attach(part)
 
-    ctx = ssl.create_default_context()
-    password = mdp     # Your app password goes here
-    #sender = "jibynd@gmail.com"    # Your e-mail address
-    #receiver = "djibril@sendwave.com" # Recipient's address
+  ctx = ssl.create_default_context()
+  password = mdp     # Your app password goes here
+  #sender = "ambodj92@gmail.com"    # Your e-mail address
+  #receiver = "ibntidiany@gmail.com" # Recipient's address
    
 
     with smtplib.SMTP_SSL("smtp.gmail.com", port=465, context=ctx) as server:
         server.login(sender, password)
         server.send_message(msg)
 ```
+
+***Création du rapport en format csv :**
+
+Au final un rapport sera généré en format csv avec le nombre de PBO déployés par zone (plaque). Ainsi on aura ce rapport comme piéce jointe du courriel.
+
+- Code référent: 
+
+```python
+def create_rapport(con, name, out):
+  df = pd.read_sql_query("select nom_plaque, count(*) as nombre from {} group by nom_plaque".format(name), con)
+  df.to_csv(out)
+```
+
+
 
 
 
@@ -313,7 +344,8 @@ A la fin de mon stage, l’objectif serait la mise en place de l’interface web
 2.	https://python.developpez.com/tutoriel/intro-flask-python3/#LVI
 3.	Fichier de recette des points de branchement optique.
 4.	Cours Python 
- 
+5.  https://stackoverflow.com/questions/52805115/    certificate-verify-failed-unable-to-get-local-issuer-certificate
+6. https://gricad-doc.univ-grenoble-alpes.fr/hpc/softenv/conda/
 
 
 

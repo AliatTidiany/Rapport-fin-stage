@@ -1,0 +1,23 @@
+A03
+11, F2, façade, SC3, T2S4P2, -20.12, Ok, RAS
+12, F3, façade, SC3, T2S4P2, -20.12, Ok, RAS
+13, F1, façade, SC3, T2S4P2, -23.12, Ok, RAS
+14, F4, façade, SC3, T2S4P2, -21.32, Ok, RAS
+15, F6, façade, SC3, T2S4P2, -24.12, Ok, RAS
+16, F5, façade, SC3, T2S4P2, -28.12, Ok, RAS
+17, F9, façade, SC3, T2S4P2, -23.32, Ok, RAS
+18, F2, façade, SC3, T2S4P2, -20.22, Ok, RAS
+19, F4, façade, SC3, T2S4P2, -29.12, Ok, RAS
+20, F8, façade, SC3, T2S4P2, -24.12, Ok, RAS
+#end
+A06
+21, F2, GT, SC3, T2S4P2, -20.12, Ok, RAS
+22, F6, GT, SC3, T2S4P2, -20.12, Ok, RAS
+23, F2, GT, SC3, T2S4P2, -23.12, Ok, RAS
+24, F1, GT, SC3, T2S4P2, -21.32, Ok, RAS
+25, F2, GT, SC3, T2S4P2, -24.12, Ok, RAS
+26, F8, GT, SC3, T2S4P2, -28.12, Ok, RAS
+27, F4, GT, SC3, T2S4P2, -23.32, Ok, RAS
+28, F3, GT, SC3, T2S4P2, -20.22, Ok, RAS
+29, F1, GT, SC3, T2S4P2, -29.12, Ok, RAS
+30, F9, GT, SC3, T2S4P2, -24.12, Ok, RAS
