@@ -117,6 +117,9 @@ Le conseil de gestion est présenté comme suit:
 -         Bureau des éléves et activités culturelles
 
 
+
+
+
   7. Fonctionnement :
 
 Au sein de cette société, il est aisé de percevoir l’interaction constante entre les différents départements décrits plus haut.
@@ -138,21 +141,25 @@ De plus des données que m’ont fourni FREE dans le cadre du déploiement du r�
   ***Présentation des outils :***
 
   **SQlite :**
+
   SQLite est un système de base de données qui a la particularité de fonctionner sans serveur, on dit aussi "standalone" ou "base de données embarquée".
   L'intérêt c'est que c'est très léger et rapide à mettre en place, on peut s'en servir aussi bien pour stocker des données dans une vraie base de données ou sur une application.
   Une base de données SQLite est bien plus performante et facile à utiliser que de stocker les données dans des fichiers XML ou binaires, d'ailleurs ces performances sont même comparables aux autres SGBD fonctionnant avec un serveur comme MySQL, Microsoft SQL Server ou PostgreSQL.
   L'autre avantage est la simplicité : il n'y a aucune manipulation à faire, le fichier sqlite est créé automatiquement à la volée, toute la base est stockée dans un fichier unique qu'il est facile d'échanger en FTP.
 
   **Flask :**
+
   Flask est un petit framework web Python léger, qui fournit des outils et des fonctionnalités utiles qui facilitent la création d'applications web en Python. Il offre aux développeurs une certaine flexibilité et constitue un cadre plus accessible pour les nouveaux développeurs, puisque vous pouvez construire rapidement une application web en utilisant un seul fichier Python. (technologie non utilisée sur ce projet.)
 
   **Python :**
+
   Python est un langage de programmation open source créé en 1991.
   En effet, Python est un langage qui prend en charge la gestion et la manipulation de données volumineuses et certaines de ses fonctions gèrent le traitement d’informations multiples de manière automatisée ainsi que la collecte et le nettoyage de données. Il permet notamment la modélisation de ces données et est très utilisé en Data Visualization. 
 
   Python est majoritairement utilisé dans l’écriture de scripts qui permettent l’automatisation de systèmes de fichiers. Cependant, c’est loin d’être les seules utilités de ce langage. D'ailleurs nous allons nous servir d'un script qui nous permettra de formater notre "input: saisie de donnée " et de le stocker au niveau de la base SQlite.
 
   **Pandas :**
+  
   La bibliothèque logicielle open-source Pandas est spécifiquement conçue pour la manipulation et l’analyse de données en langage Python. Elle est à la fois performante, flexible et simple d’utilisation.
   Grâce à Pandas, le langage Python permet enfin de charger, d’aligner, de manipuler ou encore de fusionner des données. Les performances sont particulièrement impressionnantes quand le code source back-end est écrit en C ou en Python.
   Le nom  » Pandas  » est en fait la contraction du terme  » Panel Data « , désignant les ensembles de données incluant des observations sur de multiples périodes temporelles. Cette bibliothèque a été créée comme un outil de haut niveau pour l’analyse en Python.
@@ -193,6 +200,8 @@ Au cours de ce projet, différentes sortes de tâches seront realisées :
   - Illustration: 
 
   ![](./img/Format_test.png){width=6in}
+
+
 
   **Script Python :**
 
@@ -340,12 +349,13 @@ A la fin de mon stage, l’objectif serait la mise en place de l’interface web
 
 15. Bibliographie
 
-1.	https://nskm.xyz/documents/sql-introduction.pdf
-2.	https://python.developpez.com/tutoriel/intro-flask-python3/#LVI
-3.	Fichier de recette des points de branchement optique.
-4.	Cours Python 
-5.  https://stackoverflow.com/questions/52805115/    certificate-verify-failed-unable-to-get-local-issuer-certificate
-6. https://gricad-doc.univ-grenoble-alpes.fr/hpc/softenv/conda/
+
+-	https://nskm.xyz/documents/sql-introduction.pdf
+-	https://python.developpez.com/tutoriel/intro-flask-python3/#LVI
+- Fichier de recette des points de branchement optique.
+- Cours Python 
+- https://stackoverflow.com/questions/52805115/    certificate-verify-failed-unable-to-get-local-issuer-certificate
+- https://gricad-doc.univ-grenoble-alpes.fr/hpc/softenv/conda/
 
 
 
